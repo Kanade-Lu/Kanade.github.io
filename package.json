@@ -5,7 +5,10 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "gh-pages -d build",
+    "gh-pages": "vue-cli-service gh-pages",
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -21,8 +24,11 @@
     "@vue/cli-plugin-vuex": "^4.2.3",
     "@vue/cli-service": "^4.2.0",
     "babel-eslint": "^10.0.3",
+    "compression-webpack-plugin": "^3.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
+    "gh-pages": "^2.2.0",
+    "vue-cli-plugin-gh-pages": "^1.0.0",
     "vue-cli-plugin-vuetify": "^2.0.5",
     "vue-cli-plugin-webpack-bundle-analyzer": "^2.0.0",
     "vue-template-compiler": "^2.6.11"
@@ -44,5 +50,6 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "homepage": "https://github.com/Kanade-Lu/Kanade.github.io"
 }
