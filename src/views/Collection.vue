@@ -1,53 +1,11 @@
 <template>
 
 	<v-container fluid>
-		<!-- <v-system-bar></v-system-bar> -->
-		<div>
-
-			<v-toolbar flat>
-				<v-toolbar-title>
-					<p class="font-weight-black">推荐</p>
-				</v-toolbar-title>
-				<v-spacer></v-spacer>
-
-			</v-toolbar>
-			<v-sheet class="mx-auto" max-width="95%">
-
-				<v-row class="mb-6 d-flex justify-around">
-					<!-- <v-col v-for="n in 7" :key="n" class="mb-2" sm="12" md="3" lg="2" :cols="n===1?12:6">-->
-					<v-col :class="'mb-2 '" v-for="(card,index) in SixCard" :key="index" :cols="card.flex" sm="12" md="3" lg="2">
-						<v-card>
-							<v-img :src="card.src" class="white--text align-end" gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)" height="200px">
-								<v-card-title v-text="card.title"></v-card-title>
-							</v-img>
-
-							<v-card-actions>
-								<v-spacer></v-spacer>
-
-								<v-btn icon>
-									<v-icon>mdi-heart</v-icon>
-								</v-btn>
-
-								<v-btn icon>
-									<v-icon>mdi-bookmark</v-icon>
-								</v-btn>
-
-								<v-btn icon>
-
-
-									<v-icon>mdi-share-variant</v-icon>
-								</v-btn>
-							</v-card-actions>
-						</v-card>
-					</v-col>
-				</v-row>
-
-			</v-sheet>
-		</div>
+	
 		<div>
 			<v-toolbar flat>
 				<v-toolbar-title>
-					<p class="font-weight-black">热门</p>
+					<p class="font-weight-black">我的收藏</p>
 
 				</v-toolbar-title>
 

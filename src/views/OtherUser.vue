@@ -1,64 +1,44 @@
 <template>
 
 	<v-container fluid>
-		<!-- <v-system-bar></v-system-bar> -->
-		<div>
-
-			<v-toolbar flat>
-				<v-toolbar-title>
-					<p class="font-weight-black">推荐</p>
-				</v-toolbar-title>
-				<v-spacer></v-spacer>
-
-			</v-toolbar>
-			<v-sheet class="mx-auto" max-width="95%">
-
-				<v-row class="mb-6 d-flex justify-around">
-					<!-- <v-col v-for="n in 7" :key="n" class="mb-2" sm="12" md="3" lg="2" :cols="n===1?12:6">-->
-					<v-col :class="'mb-2 '" v-for="(card,index) in SixCard" :key="index" :cols="card.flex" sm="12" md="3" lg="2">
-						<v-card>
-							<v-img :src="card.src" class="white--text align-end" gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)" height="200px">
-								<v-card-title v-text="card.title"></v-card-title>
-							</v-img>
-
-							<v-card-actions>
-								<v-spacer></v-spacer>
-
-								<v-btn icon>
-									<v-icon>mdi-heart</v-icon>
-								</v-btn>
-
-								<v-btn icon>
-									<v-icon>mdi-bookmark</v-icon>
-								</v-btn>
-
-								<v-btn icon>
-
-
-									<v-icon>mdi-share-variant</v-icon>
-								</v-btn>
-							</v-card-actions>
-						</v-card>
-					</v-col>
-				</v-row>
-
-			</v-sheet>
+		<div class="d-flex flex-row">
+			
+			<v-list-item link>
+				<v-avatar size="100" class="mr-4">
+					<img
+						src="https://cdn.vuetifyjs.com/images/john.jpg"
+						alt="John"
+					>
+				</v-avatar>
+				<v-list-item-content>
+					<v-row>
+						<v-col cols="10">
+							<v-list-item-title class="title">John Leider</v-list-item-title>
+							<v-list-item-subtitle>john@vuetifyjs.com</v-list-item-subtitle>
+						</v-col>
+						<v-col>
+							<v-btn  color="primary" @click="goto('/MessageInfo')">
+								Follow
+							</v-btn>
+						</v-col>
+					</v-row>
+			
+				
+				
+				</v-list-item-content>
+			</v-list-item>
 		</div>
 		<div>
 			<v-toolbar flat>
 				<v-toolbar-title>
-					<p class="font-weight-black">热门</p>
-
+					<p class="font-weight-black">发布的游记</p>
 				</v-toolbar-title>
-
 				<v-spacer></v-spacer>
-
-
 			</v-toolbar>
 			<v-divider class="mx-8"></v-divider>
 			<v-sheet class="mx-auto" max-width="95%">
 				<v-row class="mb-6 d-flex justify-around">
-					<v-col :class="'mb-2 '" v-for="(card,index) in cards" :key="index" cols="12" xs="12" sm="12" md="6" lg="6">
+					<v-col :class=	"'mb-2 '" v-for="(card,index) in cards" :key="index" cols="12" xs="12" sm="12" md="6" lg="6">
 						<v-card :loading="loading" class="mx-auto my-2">
 							<v-container>
 								<v-row justify="space-between">
